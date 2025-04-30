@@ -6,6 +6,7 @@ This repository contains the official logo assets for Sligh Games in various for
 
 - **SVG/** - Vector source files in SVG format
 - **PNG/** - Raster exports in PNG format (300 DPI)
+- **PDF/** - Vector exports in PDF format
 
 ## Available Variants
 
@@ -21,6 +22,14 @@ Each variant is available in these color options:
 - Black (for dark backgrounds)
 - White (for light backgrounds)
 
+### Seasonal Variants
+
+The logo is also available in seasonal color themes:
+- **Spring** - Japanese Cherry Blossom theme with pink leaves
+- **Summer** - African Savanna theme with vibrant green leaves
+- **Fall** - North American Autumn theme with orange leaves
+- **Winter** - Nordic theme with blue leaves
+
 ## Usage Guidelines
 
 - Use the SVG files for print and high-quality digital materials
@@ -31,7 +40,7 @@ Each variant is available in these color options:
 
 ## Tools
 
-This repository includes a script to convert SVG files to PNG:
+This repository includes scripts to convert and modify SVG files:
 
 ```bash
 # Convert all SVGs in the SVG directory to PNGs in the PNG directory
@@ -42,6 +51,18 @@ This repository includes a script to convert SVG files to PNG:
 
 # Specify custom input and output directories
 ./svg_to_png.sh 300 custom_svg_dir custom_png_dir
+
+# Convert all SVGs in the SVG directory to PDFs in the PDF directory
+./svg_to_pdf.sh
+
+# Specify custom input and output directories
+./svg_to_pdf.sh custom_svg_dir custom_pdf_dir
+
+# Analyze an SVG file to see group IDs and their colors
+./recolor_svg.py --analyze input.svg output.svg
+
+# Recolor an SVG file based on group IDs
+./recolor_svg.py input.svg output.svg --color-map "water:#0000FF,sun:#FFFF00"
 ```
 
 ## Requirements
