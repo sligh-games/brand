@@ -51,6 +51,9 @@ All seasonal variants are available in SVG, PNG, and PDF formats.
 This repository includes scripts in the `scripts/` directory to convert and modify SVG files:
 
 ```bash
+# Build all logo variants (SVG, PNG, PDF) including seasonal variants
+./scripts/build.sh
+
 # Convert all SVGs in the logos/SVG directory to PNGs in the logos/PNG directory
 ./scripts/svg_to_png.sh
 

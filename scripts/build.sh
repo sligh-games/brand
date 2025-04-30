@@ -1,0 +1,76 @@
+#!/bin/bash
+# Build script to generate all seasonal logo variants in SVG, PNG, and PDF formats
+# Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
+
+# Set script to exit on error
+set -e
+
+# Define colors for terminal output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}=== Sligh Games Logo Asset Builder ===${NC}"
+echo -e "${BLUE}=== Copyright © 2025 Frederic Nowak - Sligh Games ===${NC}\n"
+
+# Check if we're in the right directory (should be run from the scripts directory)
+if [ ! -f "./seasonal_colors.sh" ]; then
+    echo -e "${YELLOW}Error: This script must be run from the scripts directory${NC}"
+    exit 1
+fi
+
+# Step 1: Generate seasonal SVG variants
+echo -e "\n${GREEN}Step 1: Generating seasonal SVG variants...${NC}"
+./seasonal_colors.sh
+if [ $? -ne 0 ]; then
+    echo -e "${YELLOW}Error: Failed to generate seasonal SVG variants${NC}"
+    exit 1
+fi
+
+# Step 2: Create PNG directory structure if it doesn't exist
+echo -e "\n${GREEN}Step 2: Setting up PNG directory structure...${NC}"
+mkdir -p ../logos/PNG/seasonal
+
+# Step 3: Generate PNG files from seasonal SVG files
+echo -e "\n${GREEN}Step 3: Generating PNG files from seasonal SVG variants...${NC}"
+./svg_to_png.sh 300 ../logos/SVG/seasonal ../logos/PNG/seasonal
+if [ $? -ne 0 ]; then
+    echo -e "${YELLOW}Error: Failed to generate PNG files${NC}"
+    exit 1
+fi
+
+# Step 4: Create PDF directory structure if it doesn't exist
+echo -e "\n${GREEN}Step 4: Setting up PDF directory structure...${NC}"
+mkdir -p ../logos/PDF/seasonal
+
+# Step 5: Generate PDF files from seasonal SVG files
+echo -e "\n${GREEN}Step 5: Generating PDF files from seasonal SVG variants...${NC}"
+./svg_to_pdf.sh ../logos/SVG/seasonal ../logos/PDF/seasonal
+if [ $? -ne 0 ]; then
+    echo -e "${YELLOW}Error: Failed to generate PDF files${NC}"
+    exit 1
+fi
+
+# Step 6: Generate standard variants if they don't exist
+echo -e "\n${GREEN}Step 6: Checking for standard variants...${NC}"
+
+# Check if standard PNG files exist, if not generate them
+if [ ! -f "../logos/PNG/logo-color.png" ]; then
+    echo "Generating standard PNG variants..."
+    ./svg_to_png.sh 300 ../logos/SVG ../logos/PNG
+fi
+
+# Check if standard PDF files exist, if not generate them
+if [ ! -f "../logos/PDF/logo-color.pdf" ]; then
+    echo "Generating standard PDF variants..."
+    ./svg_to_pdf.sh ../logos/SVG ../logos/PDF
+fi
+
+# Step 7: Summary
+echo -e "\n${GREEN}=== Build Complete ===${NC}"
+echo -e "The following assets have been generated:"
+echo -e "  - Seasonal SVG variants in ${BLUE}../logos/SVG/seasonal/${NC}"
+echo -e "  - Seasonal PNG variants in ${BLUE}../logos/PNG/seasonal/${NC}"
+echo -e "  - Seasonal PDF variants in ${BLUE}../logos/PDF/seasonal/${NC}"
+echo -e "\nAll logo assets are now ready for use."
