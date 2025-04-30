@@ -3,18 +3,18 @@
 # Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
 
 # Check if the source SVG exists
-SOURCE_SVG="../SVG/logo-color.svg"
+SOURCE_SVG="../logos/SVG/logo-color.svg"
 if [ ! -f "$SOURCE_SVG" ]; then
     echo "Error: Source SVG file not found at $SOURCE_SVG"
     exit 1
 fi
 
 # Create seasonal directory if it doesn't exist
-mkdir -p ../SVG/seasonal
+mkdir -p ../logos/SVG/seasonal
 
 # Spring - Japanese Cherry Blossom theme
 echo "Creating Spring (Japanese Cherry Blossom) variant..."
-./recolor_svg.py "$SOURCE_SVG" "../SVG/seasonal/logo-spring.svg" --color-map \
+./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/seasonal/logo-spring.svg" --color-map \
 "water:#88c1e5,\
 sun:#ffe66d,\
 leaves-normal:#f8b7d3,\
@@ -27,7 +27,7 @@ roots-dark:#a39b94"
 
 # Summer - African Savanna theme
 echo "Creating Summer (African Savanna) variant..."
-./recolor_svg.py "$SOURCE_SVG" "../SVG/seasonal/logo-summer.svg" --color-map \
+./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/seasonal/logo-summer.svg" --color-map \
 "water:#4a9bd1,\
 sun:#ffcc33,\
 leaves-normal:#4a7c3d,\
@@ -40,7 +40,7 @@ roots-dark:#b29e6b"
 
 # Fall - North American Autumn theme
 echo "Creating Fall (North American Autumn) variant..."
-./recolor_svg.py "$SOURCE_SVG" "../SVG/seasonal/logo-fall.svg" --color-map \
+./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/seasonal/logo-fall.svg" --color-map \
 "water:#5e8ca7,\
 sun:#f9a825,\
 leaves-normal:#e67e22,\
@@ -53,7 +53,7 @@ roots-dark:#8d6e63"
 
 # Winter - Nordic theme
 echo "Creating Winter (Nordic) variant..."
-./recolor_svg.py "$SOURCE_SVG" "../SVG/seasonal/logo-winter.svg" --color-map \
+./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/seasonal/logo-winter.svg" --color-map \
 "water:#2c3e50,\
 sun:#ecf0f1,\
 leaves-normal:#5d8ca8,\
@@ -64,6 +64,6 @@ roots-normal:#e0e0e0,\
 roots-light:#bdbdbd,\
 roots-dark:#757575"
 
-echo "All seasonal variants created in ../SVG/seasonal/"
+echo "All seasonal variants created in ../logos/SVG/seasonal/"
 echo "You can convert them to PNG with:"
-echo "./svg_to_png.sh 300 ../SVG/seasonal ../PNG/seasonal"
+echo "./svg_to_png.sh 300 ../logos/SVG/seasonal ../logos/PNG/seasonal"

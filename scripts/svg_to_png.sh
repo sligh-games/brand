@@ -5,8 +5,8 @@
 
 # Default values
 DPI=${1:-300}           # Default DPI is 300 if not specified
-INPUT_DIR=${2:-"svg"}   # Default input directory is "svg" if not specified
-OUTPUT_DIR=${3:-"png"}  # Default output directory is "png" if not specified
+INPUT_DIR=${2:-"../logos/SVG"}   # Default input directory is "../logos/SVG" if not specified
+OUTPUT_DIR=${3:-"../logos/PNG"}  # Default output directory is "../logos/PNG" if not specified
 
 # Check if input directory exists
 if [ ! -d "$INPUT_DIR" ]; then

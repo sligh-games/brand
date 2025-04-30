@@ -4,12 +4,14 @@ This repository contains the official logo assets for Sligh Games in various for
 
 ## Directory Structure
 
-- **SVG/** - Vector source files in SVG format
-  - **SVG/seasonal/** - Seasonal variants in SVG format
-- **PNG/** - Raster exports in PNG format (300 DPI)
-  - **PNG/seasonal/** - Seasonal variants in PNG format
-- **PDF/** - Vector exports in PDF format
-  - **PDF/seasonal/** - Seasonal variants in PDF format
+- **logos/** - Main directory containing all logo assets
+  - **logos/SVG/** - Vector source files in SVG format
+    - **logos/SVG/seasonal/** - Seasonal variants in SVG format
+  - **logos/PNG/** - Raster exports in PNG format (300 DPI)
+    - **logos/PNG/seasonal/** - Seasonal variants in PNG format
+  - **logos/PDF/** - Vector exports in PDF format
+    - **logos/PDF/seasonal/** - Seasonal variants in PDF format
+- **scripts/** - Utility scripts for managing and converting logo files
 
 ## Available Variants
 
@@ -49,7 +51,7 @@ All seasonal variants are available in SVG, PNG, and PDF formats.
 This repository includes scripts in the `scripts/` directory to convert and modify SVG files:
 
 ```bash
-# Convert all SVGs in the SVG directory to PNGs in the PNG directory
+# Convert all SVGs in the logos/SVG directory to PNGs in the logos/PNG directory
 ./scripts/svg_to_png.sh
 
 # Specify custom DPI (default is 300)
@@ -58,7 +60,7 @@ This repository includes scripts in the `scripts/` directory to convert and modi
 # Specify custom input and output directories
 ./scripts/svg_to_png.sh 300 custom_svg_dir custom_png_dir
 
-# Convert all SVGs in the SVG directory to PDFs in the PDF directory
+# Convert all SVGs in the logos/SVG directory to PDFs in the logos/PDF directory
 ./scripts/svg_to_pdf.sh
 
 # Specify custom input and output directories

@@ -4,8 +4,8 @@
 # Usage: ./svg_to_pdf.sh [input_directory] [output_directory]
 
 # Default values
-INPUT_DIR=${1:-"SVG"}   # Default input directory is "SVG" if not specified
-OUTPUT_DIR=${2:-"PDF"}  # Default output directory is "PDF" if not specified
+INPUT_DIR=${1:-"../logos/SVG"}   # Default input directory is "../logos/SVG" if not specified
+OUTPUT_DIR=${2:-"../logos/PDF"}  # Default output directory is "../logos/PDF" if not specified
 
 # Check if input directory exists
 if [ ! -d "$INPUT_DIR" ]; then
