@@ -1,6 +1,9 @@
 COPYRIGHT NOTICE
 
-All logo assets, designs, and related files contained in this repository are copyright © 2025 Frederic Nowak - Sligh Games.
+Copyright © 2025 Frederic Nowak. All Rights Reserved.
+Copyright © 2025 Sligh Games. All Rights Reserved.
+
+All logo assets, designs, and related files contained in this repository are the joint property of Frederic Nowak and Sligh Games.
 
 These assets include but are not limited to:
 - All SVG files and their derivatives
@@ -10,4 +13,4 @@ These assets include but are not limited to:
 
 All rights reserved. Unauthorized use, reproduction, modification, or distribution of these assets is strictly prohibited.
 
-For licensing inquiries or permissions, please contact Frederic Nowak - Sligh Games.
+For licensing inquiries or permissions, please contact Frederic Nowak and Sligh Games.

@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to convert SVG files to PDF using Inkscape
-# Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
+# Copyright © 2025 Frederic Nowak. All Rights Reserved.
+# Copyright © 2025 Sligh Games. All Rights Reserved.
 # Usage: ./svg_to_pdf.sh [input_directory] [output_directory]
 
 # Default values

@@ -89,4 +89,7 @@ This repository includes scripts to convert and modify SVG files:
 
 ## License
 
-All logo assets are copyright © Frederic Nowak - Sligh Games. All rights reserved.
+Copyright © 2025 Frederic Nowak. All Rights Reserved.
+Copyright © 2025 Sligh Games. All Rights Reserved.
+
+All logo assets are jointly owned by Frederic Nowak and Sligh Games.

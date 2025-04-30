@@ -1,6 +1,7 @@
 #!/bin/bash
 # Build script to generate all seasonal logo variants in SVG, PNG, and PDF formats
-# Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
+# Copyright © 2025 Frederic Nowak. All Rights Reserved.
+# Copyright © 2025 Sligh Games. All Rights Reserved.
 
 # Set script to exit on error
 set -e

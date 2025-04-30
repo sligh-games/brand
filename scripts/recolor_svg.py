@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Script to recolor SVG files by applying a new color palette based on group IDs.
-Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
+Copyright © 2025 Frederic Nowak. All Rights Reserved.
+Copyright © 2025 Sligh Games. All Rights Reserved.
 """
 
 import os

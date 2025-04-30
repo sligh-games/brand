@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to convert SVG files to PNG using Inkscape
-# Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
+# Copyright © 2025 Frederic Nowak. All Rights Reserved.
+# Copyright © 2025 Sligh Games. All Rights Reserved.
 # Usage: ./svg_to_png.sh [dpi] [input_directory] [output_directory]
 
 # Default values
