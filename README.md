@@ -46,32 +46,35 @@ All seasonal variants are available in SVG, PNG, and PDF formats.
 
 ## Tools
 
-This repository includes scripts to convert and modify SVG files:
+This repository includes scripts in the `scripts/` directory to convert and modify SVG files:
 
 ```bash
 # Convert all SVGs in the SVG directory to PNGs in the PNG directory
-./svg_to_png.sh
+./scripts/svg_to_png.sh
 
 # Specify custom DPI (default is 300)
-./svg_to_png.sh 600
+./scripts/svg_to_png.sh 600
 
 # Specify custom input and output directories
-./svg_to_png.sh 300 custom_svg_dir custom_png_dir
+./scripts/svg_to_png.sh 300 custom_svg_dir custom_png_dir
 
 # Convert all SVGs in the SVG directory to PDFs in the PDF directory
-./svg_to_pdf.sh
+./scripts/svg_to_pdf.sh
 
 # Specify custom input and output directories
-./svg_to_pdf.sh custom_svg_dir custom_pdf_dir
+./scripts/svg_to_pdf.sh custom_svg_dir custom_pdf_dir
 
 # Analyze an SVG file to see group IDs and their colors
-./recolor_svg.py --analyze input.svg output.svg
+./scripts/recolor_svg.py --analyze input.svg output.svg
 
 # Recolor an SVG file based on group IDs
-./recolor_svg.py input.svg output.svg --color-map "water:#0000FF,sun:#FFFF00"
+./scripts/recolor_svg.py input.svg output.svg --color-map "water:#0000FF,sun:#FFFF00"
 
 # Generate all seasonal variants from the base logo
-./seasonal_colors.sh
+./scripts/seasonal_colors.sh
+
+# Clean SVG files by removing id and style attributes from path nodes
+./scripts/clean_svg_paths.py
 ```
 
 ## Requirements
