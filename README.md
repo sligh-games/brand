@@ -5,8 +5,11 @@ This repository contains the official logo assets for Sligh Games in various for
 ## Directory Structure
 
 - **SVG/** - Vector source files in SVG format
+  - **SVG/seasonal/** - Seasonal variants in SVG format
 - **PNG/** - Raster exports in PNG format (300 DPI)
+  - **PNG/seasonal/** - Seasonal variants in PNG format
 - **PDF/** - Vector exports in PDF format
+  - **PDF/seasonal/** - Seasonal variants in PDF format
 
 ## Available Variants
 
@@ -30,10 +33,13 @@ The logo is also available in seasonal color themes:
 - **Fall** - North American Autumn theme with orange leaves
 - **Winter** - Nordic theme with blue leaves
 
+All seasonal variants are available in SVG, PNG, and PDF formats.
+
 ## Usage Guidelines
 
 - Use the SVG files for print and high-quality digital materials
 - Use the PNG files for web and digital applications
+- Use the PDF files for professional printing and publications
 - Always maintain the proportions of the logos when resizing
 - Ensure adequate spacing around the logo (at least the height of the "S" in the logo)
 - Do not alter the colors or modify the logo design
@@ -63,11 +69,15 @@ This repository includes scripts to convert and modify SVG files:
 
 # Recolor an SVG file based on group IDs
 ./recolor_svg.py input.svg output.svg --color-map "water:#0000FF,sun:#FFFF00"
+
+# Generate all seasonal variants from the base logo
+./seasonal_colors.sh
 ```
 
 ## Requirements
 
-- Inkscape (for SVG to PNG conversion)
+- Inkscape (for SVG to PNG and SVG to PDF conversion)
+- Python 3 (for the recolor_svg.py script)
 
 ## License
 
