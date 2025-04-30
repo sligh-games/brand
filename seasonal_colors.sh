@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script to create seasonal variants of the logo using recolor_svg.py
+# Copyright © 2025 Frederic Nowak - Sligh Games. All rights reserved.
 
 # Check if the source SVG exists
 SOURCE_SVG="./SVG/logo-color.svg"
