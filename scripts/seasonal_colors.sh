@@ -22,8 +22,8 @@ leaves-normal:#f8b7d3,\
 leaves-light:#ffd1e8,\
 leaves-dark:#d4809b,\
 trunk:#8b6f5a,\
-roots-normal:#f0e8e2,\
-roots-light:#d5cec8,\
+roots-normal:#e0d8d2,\
+roots-light:#f0e8e2,\
 roots-dark:#a39b94"
 
 # Summer - African Savanna theme
@@ -35,8 +35,8 @@ leaves-normal:#4a7c3d,\
 leaves-light:#6ba359,\
 leaves-dark:#2e5024,\
 trunk:#a67c52,\
-roots-normal:#e8d9b5,\
-roots-light:#d5c28e,\
+roots-normal:#d5c28e,\
+roots-light:#e8d9b5,\
 roots-dark:#b29e6b"
 
 # Fall - North American Autumn theme
@@ -49,7 +49,7 @@ leaves-light:#f39c12,\
 leaves-dark:#c0392b,\
 trunk:#6d4c41,\
 roots-normal:#d7ccc8,\
-roots-light:#bcaaa4,\
+roots-light:#e5dbd8,\
 roots-dark:#8d6e63"
 
 # Winter - Nordic theme
@@ -61,8 +61,8 @@ leaves-normal:#5d8ca8,\
 leaves-light:#89c4e1,\
 leaves-dark:#34495e,\
 trunk:#6d4c41,\
-roots-normal:#e0e0e0,\
-roots-light:#bdbdbd,\
+roots-normal:#bdbdbd,\
+roots-light:#e0e0e0,\
 roots-dark:#757575"
 
 echo "All seasonal variants created in ../logos/SVG/seasonal/"
