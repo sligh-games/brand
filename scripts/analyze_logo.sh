@@ -15,7 +15,7 @@ show_help() {
     echo ""
     echo "Example:"
     echo "  $0 ../logos/SVG/logo-color.svg"
-    echo "  $0 --output analyzed.svg ../logos/SVG/seasonal/logo-fall.svg"
+    echo "  $0 --output analyzed.svg ../logos/SVG/logo-color.svg"
 }
 
 # Parse command line arguments
