@@ -1,62 +1,46 @@
 #!/bin/bash
-# Script to convert SVG files to PDF using Inkscape
-# Copyright © 2025 Frederic Nowak. All Rights Reserved.
+# Convert SVG files to PDF format
 # Copyright © 2025 Sligh Games. All Rights Reserved.
-# Usage: ./svg_to_pdf.sh [input_directory] [output_directory]
-
-# Default values
-INPUT_DIR=${1:-"../logos/SVG"}   # Default input directory is "../logos/SVG" if not specified
-OUTPUT_DIR=${2:-"../logos/PDF"}  # Default output directory is "../logos/PDF" if not specified
-
-# Check if input directory exists
-if [ ! -d "$INPUT_DIR" ]; then
-    echo "Input directory '$INPUT_DIR' does not exist."
-    echo "Please create the directory and place your SVG files there."
-    exit 1
-fi
-
-# Create output directory if it doesn't exist
-mkdir -p "$OUTPUT_DIR"
 
 # Check if Inkscape is installed
 if ! command -v inkscape &> /dev/null; then
-    echo "Error: Inkscape is not installed or not in PATH"
-    echo "Please install Inkscape first:"
-    echo "  macOS: brew install inkscape"
-    echo "  Linux: sudo apt-get install inkscape"
+    echo "Error: Inkscape is required but not installed."
     exit 1
 fi
 
-# Count SVG files in the input directory
-SVG_FILES=("$INPUT_DIR"/*.svg)
-SVG_COUNT=${#SVG_FILES[@]}
+SVG_DIR=${1:-"../logos/SVG"}
+PDF_DIR=${2:-"../logos/PDF"}
 
-# Check if the pattern didn't match any files
-if [ ! -e "${SVG_FILES[0]}" ]; then
-    echo "No SVG files found in the '$INPUT_DIR' directory."
-    exit 1
-fi
+# Create PDF directory if it doesn't exist
+mkdir -p "$PDF_DIR"
 
-echo "Found $SVG_COUNT SVG files in '$INPUT_DIR'. Converting to PDF..."
+echo "Converting SVG files to PDF..."
 
 # Process each SVG file
-for SVG_FILE in "$INPUT_DIR"/*.svg; do
-    # Get filename without extension
-    FILENAME=$(basename "$SVG_FILE" .svg)
+for svg_file in "$SVG_DIR"/*.svg; do
+    # Skip if not a file
+    [ -f "$svg_file" ] || continue
     
-    echo "Converting $(basename "$SVG_FILE") to PDF..."
+    # Skip .DS_Store files
+    if [[ "$(basename "$svg_file")" == ".DS_Store" ]]; then
+        continue
+    fi
     
-    # Use Inkscape to export SVG to PDF
-    inkscape --export-filename="$OUTPUT_DIR/$FILENAME.pdf" \
-             --export-type=pdf \
-             "$SVG_FILE"
+    # Get the base filename
+    filename=$(basename "$svg_file")
+    pdf_filename="${filename%.svg}.pdf"
+    pdf_path="$PDF_DIR/$pdf_filename"
     
-    # Check if conversion was successful
+    echo "Converting $filename to $pdf_filename..."
+    
+    # Convert SVG to PDF using Inkscape
+    inkscape --export-filename="$pdf_path" --export-type=pdf "$svg_file"
+    
     if [ $? -eq 0 ]; then
-        echo "  ✓ Successfully created $OUTPUT_DIR/$FILENAME.pdf"
+        echo "  Success: Created $pdf_filename"
     else
-        echo "  ✗ Failed to convert $SVG_FILE"
+        echo "  Error: Failed to convert $filename"
     fi
 done
 
-echo "Conversion complete. PDF files are in the '$OUTPUT_DIR' directory."
+echo "PDF conversion complete!"

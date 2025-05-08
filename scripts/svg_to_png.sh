@@ -1,64 +1,48 @@
 #!/bin/bash
-# Script to convert SVG files to PNG using Inkscape
-# Copyright © 2025 Frederic Nowak. All Rights Reserved.
+# Convert SVG files to PNG format
 # Copyright © 2025 Sligh Games. All Rights Reserved.
-# Usage: ./svg_to_png.sh [dpi] [input_directory] [output_directory]
-
-# Default values
-DPI=${1:-300}           # Default DPI is 300 if not specified
-INPUT_DIR=${2:-"../logos/SVG"}   # Default input directory is "../logos/SVG" if not specified
-OUTPUT_DIR=${3:-"../logos/PNG"}  # Default output directory is "../logos/PNG" if not specified
-
-# Check if input directory exists
-if [ ! -d "$INPUT_DIR" ]; then
-    echo "Input directory '$INPUT_DIR' does not exist. Creating it..."
-    mkdir -p "$INPUT_DIR"
-    echo "Please place your SVG files in the '$INPUT_DIR' directory and run this script again."
-    exit 0
-fi
-
-# Create output directory if it doesn't exist
-mkdir -p "$OUTPUT_DIR"
 
 # Check if Inkscape is installed
 if ! command -v inkscape &> /dev/null; then
-    echo "Error: Inkscape is not installed or not in PATH"
-    echo "Please install Inkscape first:"
-    echo "  macOS: brew install inkscape"
-    echo "  Linux: sudo apt-get install inkscape"
+    echo "Error: Inkscape is required but not installed."
     exit 1
 fi
 
-# Count SVG files in the input directory
-SVG_FILES=("$INPUT_DIR"/*.svg)
-SVG_COUNT=${#SVG_FILES[@]}
+# Default DPI if not provided
+DPI=${1:-300}
+SVG_DIR=${2:-"../logos/SVG"}
+PNG_DIR=${3:-"../logos/PNG"}
 
-# Check if the pattern didn't match any files
-if [ ! -e "${SVG_FILES[0]}" ]; then
-    echo "No SVG files found in the '$INPUT_DIR' directory."
-    exit 1
-fi
+# Create PNG directory if it doesn't exist
+mkdir -p "$PNG_DIR"
 
-echo "Found $SVG_COUNT SVG files in '$INPUT_DIR'. Converting to PNG with $DPI DPI..."
+echo "Converting SVG files to PNG with $DPI DPI..."
 
 # Process each SVG file
-for SVG_FILE in "$INPUT_DIR"/*.svg; do
-    # Get filename without extension
-    FILENAME=$(basename "$SVG_FILE" .svg)
+for svg_file in "$SVG_DIR"/*.svg; do
+    # Skip if not a file
+    [ -f "$svg_file" ] || continue
     
-    echo "Converting $(basename "$SVG_FILE") to PNG..."
+    # Skip .DS_Store files
+    if [[ "$(basename "$svg_file")" == ".DS_Store" ]]; then
+        continue
+    fi
     
-    # Use Inkscape to export SVG to PNG
-    inkscape --export-filename="$OUTPUT_DIR/$FILENAME.png" \
-             --export-dpi=$DPI \
-             "$SVG_FILE"
+    # Get the base filename
+    filename=$(basename "$svg_file")
+    png_filename="${filename%.svg}.png"
+    png_path="$PNG_DIR/$png_filename"
     
-    # Check if conversion was successful
+    echo "Converting $filename to $png_filename..."
+    
+    # Convert SVG to PNG using Inkscape
+    inkscape --export-filename="$png_path" --export-dpi=$DPI "$svg_file"
+    
     if [ $? -eq 0 ]; then
-        echo "  ✓ Successfully created $OUTPUT_DIR/$FILENAME.png"
+        echo "  Success: Created $png_filename"
     else
-        echo "  ✗ Failed to convert $SVG_FILE"
+        echo "  Error: Failed to convert $filename"
     fi
 done
 
-echo "Conversion complete. PNG files are in the '$OUTPUT_DIR' directory."
+echo "PNG conversion complete!"

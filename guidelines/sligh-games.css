@@ -1,0 +1,92 @@
+/**
+ * Sligh Games - Brand Color Stylesheet
+ * Copyright © 2025 Sligh Games. All Rights Reserved.
+ */
+
+:root {
+  /* Logo Colors */
+  --sligh-water: #2f5c7e;
+  --sligh-sun: #ffe66d;
+  --sligh-leaves-normal: #436e4f;
+  --sligh-leaves-light: #689f7c;
+  --sligh-leaves-dark: #2a443a;
+  --sligh-trunk: #8b6f5a;
+  --sligh-roots-normal: #a39b94;
+  --sligh-roots-light: #d5cec8;
+  --sligh-roots-dark: #7d756f;
+  --sligh-text: #7d756f;
+
+  /* Semantic Colors - Using leaves colors as primary and secondary */
+  --sligh-primary: var(--sligh-leaves-normal);
+  --sligh-secondary: var(--sligh-leaves-light);
+  --sligh-tertiary: var(--sligh-leaves-dark);
+  --sligh-accent: var(--sligh-sun);
+  --sligh-text-primary: var(--sligh-text);
+  --sligh-background-light: var(--sligh-roots-light);
+  --sligh-background-dark: var(--sligh-roots-dark);
+}
+
+/* Utility Classes */
+.sligh-bg-water { background-color: var(--sligh-water); }
+.sligh-bg-sun { background-color: var(--sligh-sun); }
+.sligh-bg-leaves { background-color: var(--sligh-leaves-normal); }
+.sligh-bg-leaves-light { background-color: var(--sligh-leaves-light); }
+.sligh-bg-leaves-dark { background-color: var(--sligh-leaves-dark); }
+.sligh-bg-trunk { background-color: var(--sligh-trunk); }
+.sligh-bg-roots { background-color: var(--sligh-roots-normal); }
+.sligh-bg-roots-light { background-color: var(--sligh-roots-light); }
+.sligh-bg-roots-dark { background-color: var(--sligh-roots-dark); }
+
+.sligh-text-water { color: var(--sligh-water); }
+.sligh-text-sun { color: var(--sligh-sun); }
+.sligh-text-leaves { color: var(--sligh-leaves-normal); }
+.sligh-text-leaves-light { color: var(--sligh-leaves-light); }
+.sligh-text-leaves-dark { color: var(--sligh-leaves-dark); }
+.sligh-text-trunk { color: var(--sligh-trunk); }
+.sligh-text-roots { color: var(--sligh-roots-normal); }
+.sligh-text-roots-light { color: var(--sligh-roots-light); }
+.sligh-text-roots-dark { color: var(--sligh-roots-dark); }
+
+/* Common Element Styling */
+body {
+  color: var(--sligh-text-primary);
+  font-family: 'Arial', sans-serif;
+}
+
+a {
+  color: var(--sligh-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sligh-secondary);
+}
+
+.sligh-button {
+  background-color: var(--sligh-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sligh-button:hover {
+  background-color: var(--sligh-secondary);
+}
+
+.sligh-button-secondary {
+  background-color: var(--sligh-secondary);
+  color: white;
+}
+
+.sligh-button-tertiary {
+  background-color: var(--sligh-tertiary);
+  color: white;
+}
+
+.sligh-button-accent {
+  background-color: var(--sligh-accent);
+  color: var(--sligh-tertiary);
+}
