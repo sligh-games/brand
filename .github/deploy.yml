@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Build
+        run: mkdir dist && cp logos/* dist && mv guidelines/* dist && dist/sligh-games.html dist/index.html
+        
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
