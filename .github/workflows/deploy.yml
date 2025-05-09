@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
     
       - name: Build
-        run: mkdir dist && cp logos/* dist && mv guidelines/* dist && dist/sligh-games.html dist/index.html
+        run: mkdir dist && cp -R logos/* dist && mv guidelines/* dist && dist/sligh-games.html dist/index.html
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
