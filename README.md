@@ -301,6 +301,6 @@ Copyright © 2025 Sligh Games. All Rights Reserved.
 
 All logo assets are jointly owned by Frederic Nowak and Sligh Games.
 
-For licensing inquiries: frederic.nowak@sligh.games
+For licensing inquiries: legal@sligh.games
 
 For detailed licensing information, please see the [LICENSE](./LICENSE) and [COPYRIGHT](./COPYRIGHT.txt) files.
