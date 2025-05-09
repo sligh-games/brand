@@ -8,8 +8,8 @@ if ! command -v inkscape &> /dev/null; then
     exit 1
 fi
 
-SVG_DIR=${1:-"../logos/SVG"}
-PDF_DIR=${2:-"../logos/PDF"}
+SVG_DIR=${1:-"../public/logos/SVG"}
+PDF_DIR=${2:-"../public/logos/PDF"}
 
 # Create PDF directory if it doesn't exist
 mkdir -p "$PDF_DIR"

@@ -10,8 +10,8 @@ fi
 
 # Default DPI if not provided
 DPI=${1:-300}
-SVG_DIR=${2:-"../logos/SVG"}
-PNG_DIR=${3:-"../logos/PNG"}
+SVG_DIR=${2:-"../public/logos/SVG"}
+PNG_DIR=${3:-"../public/logos/PNG"}
 
 # Create PNG directory if it doesn't exist
 mkdir -p "$PNG_DIR"

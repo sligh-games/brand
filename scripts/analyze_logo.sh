@@ -14,8 +14,8 @@ show_help() {
     echo "  --output <file> Specify output file (default: /tmp/output.svg)"
     echo ""
     echo "Example:"
-    echo "  $0 ../logos/SVG/logo-color.svg"
-    echo "  $0 --output analyzed.svg ../logos/SVG/logo-color.svg"
+    echo "  $0 ../public/logos/SVG/sligh-games-logo-color.svg"
+    echo "  $0 --output analyzed.svg ../public/logos/SVG/sligh-games-logo-color.svg"
 }
 
 # Parse command line arguments

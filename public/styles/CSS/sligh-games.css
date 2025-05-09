@@ -24,6 +24,14 @@
   --sligh-text-primary: var(--sligh-text);
   --sligh-background-light: var(--sligh-roots-light);
   --sligh-background-dark: var(--sligh-roots-dark);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
 }
 
 /* Utility Classes */
@@ -63,17 +71,30 @@ a:hover {
 }
 
 .sligh-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
   background-color: var(--sligh-primary);
   color: white;
-  border: none;
-  padding: 10px 20px;
   border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.1s;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .sligh-button:hover {
   background-color: var(--sligh-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sligh-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .sligh-button-secondary {

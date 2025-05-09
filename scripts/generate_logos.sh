@@ -42,8 +42,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check if the source SVGs exist
-SOURCE_SVG="$(pwd)/../logos/SVG/logo-color.svg"
-SOURCE_NAME_SVG="$(pwd)/../logos/SVG/logo-name-color.svg"
+SOURCE_SVG="$(pwd)/../public/logos/SVG/sligh-games-logo-color.svg"
+SOURCE_NAME_SVG="$(pwd)/../public/logos/SVG/sligh-games-logo-name-color.svg"
 
 if [ ! -f "$SOURCE_SVG" ]; then
     echo "Error: Source SVG file not found at $SOURCE_SVG"
@@ -61,7 +61,7 @@ generate_standard_variants() {
     
     # Black variant
     echo "Creating black variant..."
-    ./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/logo-black.svg" --color-map \
+    ./recolor_svg.py "$SOURCE_SVG" "../public/logos/SVG/sligh-games-logo-black.svg" --color-map \
     "water:#000000,\
     sun:#000000,\
     leaves-normal:#000000,\
@@ -72,7 +72,7 @@ generate_standard_variants() {
     roots-light:#000000,\
     roots-dark:#000000"
 
-    ./recolor_svg.py "$SOURCE_NAME_SVG" "../logos/SVG/logo-name-black.svg" --color-map \
+    ./recolor_svg.py "$SOURCE_NAME_SVG" "../public/logos/SVG/sligh-games-logo-name-black.svg" --color-map \
     "water:#000000,\
     sun:#000000,\
     leaves-normal:#000000,\
@@ -86,7 +86,7 @@ generate_standard_variants() {
 
     # White variant
     echo "Creating white variant..."
-    ./recolor_svg.py "$SOURCE_SVG" "../logos/SVG/logo-white.svg" --color-map \
+    ./recolor_svg.py "$SOURCE_SVG" "../public/logos/SVG/sligh-games-logo-white.svg" --color-map \
     "water:#ffffff,\
     sun:#ffffff,\
     leaves-normal:#ffffff,\
@@ -97,7 +97,7 @@ generate_standard_variants() {
     roots-light:#ffffff,\
     roots-dark:#ffffff"
 
-    ./recolor_svg.py "$SOURCE_NAME_SVG" "../logos/SVG/logo-name-white.svg" --color-map \
+    ./recolor_svg.py "$SOURCE_NAME_SVG" "../public/logos/SVG/sligh-games-logo-name-white.svg" --color-map \
     "water:#ffffff,\
     sun:#ffffff,\
     leaves-normal:#ffffff,\
@@ -109,7 +109,7 @@ generate_standard_variants() {
     roots-dark:#ffffff,\
     name:#ffffff"
 
-    echo "All standard variants created in ../logos/SVG/"
+    echo "All standard variants created in ../public/logos/SVG/"
 }
 
 # Convert SVG files to PNG and PDF
@@ -118,8 +118,8 @@ convert_files() {
     
     if [ "$GENERATE_STANDARD" = true ]; then
         echo "Converting standard variants..."
-        ./svg_to_png.sh 300 ../logos/SVG ../logos/PNG
-        ./svg_to_pdf.sh ../logos/SVG ../logos/PDF
+        ./svg_to_png.sh 300 ../public/logos/SVG ../public/logos/PNG
+        ./svg_to_pdf.sh ../public/logos/SVG ../public/logos/PDF
     fi
 }
 
