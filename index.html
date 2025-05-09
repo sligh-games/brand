@@ -3,425 +3,848 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sligh Games Brand Assets</title>
-    <link rel="stylesheet" href="sligh-games.css">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sligh Games Brand Assets | Official Logo and Color Palette</title>
+    <meta name="description" content="Download official Sligh Games brand assets including logos, color palette, and usage guidelines. Available in SVG, PNG, and PDF formats.">
+    <meta name="keywords" content="Sligh Games, brand assets, logo, color palette, game studio, brand guidelines">
+    <meta name="author" content="Sligh Games">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brand.sligh.games/">
+    <meta property="og:title" content="Sligh Games Brand Assets">
+    <meta property="og:description" content="Official logo assets and color palette for Sligh Games. Download in SVG, PNG, and PDF formats.">
+    <meta property="og:image" content="https://brand.sligh.games/logos/PNG/sligh-games-logo-name-color.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brand.sligh.games/">
+    <meta property="twitter:title" content="Sligh Games Brand Assets">
+    <meta property="twitter:description" content="Official logo assets and color palette for Sligh Games. Download in SVG, PNG, and PDF formats.">
+    <meta property="twitter:image" content="https://brand.sligh.games/logos/PNG/sligh-games-logo-name-color.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brand.sligh.games/">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logos/PNG/sligh-games-logo-color.png">
+    <link rel="apple-touch-icon" href="./logos/PNG/sligh-games-logo-color.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles/CSS/sligh-games.css">
+    
     <style>
+        /* Base styles */
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: var(--sligh-text-primary);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f8f7;
+        }
+        
+        .sligh-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem 1rem;
         }
         
+        /* Header styles */
         header {
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--sligh-leaves-light);
-            padding-bottom: 20px;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            background-color: var(--sligh-background-light);
+            border-radius: 8px;
         }
         
-        h1 {
+        header h1 {
+            color: var(--sligh-leaves-normal);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Section styles */
+        section {
+            margin-bottom: 3rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        section h2 {
+            color: var(--sligh-leaves-dark);
+            border-bottom: 2px solid var(--sligh-leaves-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Grid layout */
+        .sligh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Card styles */
+        .sligh-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sligh-card-header {
+            padding: 1rem;
+            background-color: var(--sligh-background-light);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sligh-card-header h3 {
+            margin: 0;
             color: var(--sligh-leaves-normal);
         }
         
-        h2 {
-            color: var(--sligh-water);
-            margin-top: 40px;
-            border-bottom: 1px solid var(--sligh-roots-light);
-            padding-bottom: 10px;
+        .sligh-card-body {
+            padding: 1rem;
+            flex-grow: 1;
         }
         
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+        .sligh-card-footer {
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
         }
         
-        .logo-item {
-            border: 1px solid var(--sligh-roots-light);
-            border-radius: 8px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Logo display */
+        .sligh-logo-display {
+            padding: 2rem;
+            text-align: center;
+            background-color: #f9f9f9;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .logo-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0),
-                              linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            padding: 10px;
+        /* Logo preview controls */
+        .logo-preview-controls {
+            text-align: center;
+            margin-top: 0.75rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
         }
         
-        .logo-item h3 {
-            margin-top: 0;
-            color: var(--sligh-leaves-dark);
+        .logo-variant-btn {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
         
-        .logo-item p {
-            font-size: 14px;
+        .logo-variant-btn:hover {
+            background-color: #e0e0e0;
         }
         
-        .download-links {
-            margin-top: 15px;
-        }
-        
-        .format-group {
-            margin-bottom: 10px;
-        }
-        
-        .format-label {
-            font-weight: bold;
-            margin-right: 10px;
-            display: inline-block;
-            width: 40px;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            padding: 5px 10px;
+        .logo-variant-btn.active {
             background-color: var(--sligh-leaves-normal);
             color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-right: 5px;
-            transition: background-color 0.2s;
+            border-color: var(--sligh-leaves-normal);
         }
         
-        .download-btn:hover {
-            background-color: var(--sligh-leaves-light);
+        .logo-preview {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
         }
         
-        .color-palette {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+        /* Dark background for white logos */
+        .sligh-logo-display.dark-bg {
+            background-color: #222;
         }
         
-        .color-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .sligh-logo-display img {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
         }
         
-        .color-box {
+        /* Color box */
+        .sligh-color-box {
             height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: bold;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        .color-info {
-            padding: 15px;
-            background-color: white;
-            border-top: 1px solid #eee;
-        }
-        
-        .color-info h4 {
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        
-        .color-info p {
-            margin: 5px 0;
-            font-family: monospace;
-            font-size: 14px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 2px solid var(--sligh-leaves-light);
-            font-size: 14px;
-        }
-        
-        .dark-text {
-            color: #333;
         }
         
         .light-text {
             color: white;
         }
+        
+        .dark-text {
+            color: var(--sligh-leaves-dark);
+        }
+        
+        /* Download buttons */
+        .format-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sligh-format-label {
+            font-weight: bold;
+            min-width: 40px;
+        }
+        
+        /* Download buttons stack */
+        .download-buttons-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .download-buttons-stack .sligh-button {
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-weight: 500;
+        }
+        
+        /* Download buttons */
+        .sligh-download-btn {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--sligh-leaves-light);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .sligh-download-btn:hover {
+            background-color: var(--sligh-leaves-normal);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sligh-download-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sligh-download-btn::before {
+            content: "↓ ";
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .sligh-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Spacing utilities */
+        .sligh-mt-xs { margin-top: var(--spacing-xs); }
+        .sligh-mt-sm { margin-top: var(--spacing-sm); }
+        .sligh-mt-md { margin-top: var(--spacing-md); }
+        
+        /* Code preview */
+        .code-preview {
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .code-preview pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .code-preview code {
+            display: block;
+            white-space: pre;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sligh-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .format-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Sligh Games Brand Assets",
+      "description": "Official logo assets and color palette for Sligh Games",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sligh Games",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://brand.sligh.games/logos/PNG/sligh-games-logo-color.png"
+        }
+      },
+      "license": "https://brand.sligh.games/LICENSE"
+    }
+    </script>
 </head>
-<body>
+<body class="sligh-container">
     <header>
         <h1>Sligh Games Brand Assets</h1>
         <p>Official logo assets and color palette for Sligh Games</p>
     </header>
     
-    <section>
-        <h2>Logo Variants</h2>
-        <div class="logo-grid">
-            <!-- Logo Only -->
-            <div class="logo-item">
-                <img src="../logos/PNG/sligh-games-logo-color.png" alt="Sligh Games Logo Only" onerror="this.src='../logos/PNG/sligh-games-logo-black.png'">
-                <h3>Logo Only</h3>
-                <p>Just the logo mark without text. Use this for icons, avatars, or when the brand is already well recognized.</p>
-                <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #999;">White</span></p>
-                <div class="download-links">
-                    <div class="format-group">
-                        <span class="format-label">SVG:</span>
-                        <a href="../logos/SVG/sligh-games-logo-color.svg" download class="download-btn">Color</a>
-                        <a href="../logos/SVG/sligh-games-logo-black.svg" download class="download-btn">Black</a>
-                        <a href="../logos/SVG/sligh-games-logo-white.svg" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PNG:</span>
-                        <a href="../logos/PNG/sligh-games-logo-color.png" download class="download-btn">Color</a>
-                        <a href="../logos/PNG/sligh-games-logo-black.png" download class="download-btn">Black</a>
-                        <a href="../logos/PNG/sligh-games-logo-white.png" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PDF:</span>
-                        <a href="../logos/PDF/sligh-games-logo-color.pdf" download class="download-btn">Color</a>
-                        <a href="../logos/PDF/sligh-games-logo-black.pdf" download class="download-btn">Black</a>
-                        <a href="../logos/PDF/sligh-games-logo-white.pdf" download class="download-btn">White</a>
-                    </div>
+    <main>
+        <section id="usage-guidelines" aria-labelledby="usage-guidelines-heading">
+            <h2 id="usage-guidelines-heading">Usage Guidelines</h2>
+            <div class="sligh-card">
+                <div class="sligh-card-body">
+                    <h3>Logo Usage</h3>
+                    <ul>
+                        <li>Use the SVG files for print and high-quality digital materials</li>
+                        <li>Use the PNG files for web and digital applications</li>
+                        <li>Use the PDF files for professional printing and publications</li>
+                        <li>Always maintain the proportions of the logos when resizing</li>
+                        <li>Ensure adequate spacing around the logo (at least the height of the "S" in the logo)</li>
+                        <li>Do not alter the colors or modify the logo design</li>
+                    </ul>
+                    
+                    <h3>Color Usage</h3>
+                    <ul>
+                        <li>Use the exact color codes provided in the color palette for all official materials</li>
+                        <li>For print materials, use the CMYK equivalents of these colors</li>
+                        <li>For web and digital applications, use the RGB/HEX values</li>
+                        <li>The primary brand color is Green (<code>#436e4f</code>)</li>
+                        <li>The secondary brand color is Light Green (<code>#689f7c</code>)</li>
+                        <li>The accent color is Yellow (<code>#ffe66d</code>)</li>
+                    </ul>
+                    
+                    <h3>CSS Implementation</h3>
+                    <ul>
+                        <li>Use the provided CSS variables for consistent branding across web projects</li>
+                        <li>Include the Sligh Games stylesheet in your project: <code>&lt;link rel="stylesheet" href="https://brand.sligh.games/styles/CSS/sligh-games.css"&gt;</code></li>
+                        <li>For color application, use the semantic variables (e.g., <code>var(--sligh-primary)</code>) rather than direct color variables when possible</li>
+                        <li>Use the utility classes for quick styling:
+                            <ul>
+                                <li>Background colors: <code>.sligh-bg-water</code>, <code>.sligh-bg-leaves</code>, etc.</li>
+                                <li>Text colors: <code>.sligh-text-water</code>, <code>.sligh-text-leaves</code>, etc.</li>
+                            </ul>
+                        </li>
+                        <li>For buttons, use the <code>.sligh-button</code> class and its variants</li>
+                        <li>For SCSS projects, import the SCSS file and leverage the variables and mixins</li>
+                    </ul>
+                    
+                    <h3>Accessibility</h3>
+                    <ul>
+                        <li>Ensure sufficient color contrast when using brand colors for text and backgrounds</li>
+                        <li>The primary green works well with white text (passes WCAG AA standards)</li>
+                        <li>The yellow accent should not be used for text on white backgrounds due to poor contrast</li>
+                        <li>Always include proper alt text when using logo images</li>
+                    </ul>
                 </div>
             </div>
-            
-            <!-- Full Logo with Name -->
-            <div class="logo-item">
-                <img src="../logos/PNG/sligh-games-logo-name-color.png" alt="Sligh Games Full Logo with Name" onerror="this.src='../logos/PNG/sligh-games-logo-name-black.png'">
-                <h3>Full Logo with Name</h3>
-                <p>Standard arrangement of the logo mark and name. Use this for general applications.</p>
-                <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #999;">White</span></p>
-                <div class="download-links">
-                    <div class="format-group">
-                        <span class="format-label">SVG:</span>
-                        <a href="../logos/SVG/sligh-games-logo-name-color.svg" download class="download-btn">Color</a>
-                        <a href="../logos/SVG/sligh-games-logo-name-black.svg" download class="download-btn">Black</a>
-                        <a href="../logos/SVG/sligh-games-logo-name-white.svg" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PNG:</span>
-                        <a href="../logos/PNG/sligh-games-logo-name-color.png" download class="download-btn">Color</a>
-                        <a href="../logos/PNG/sligh-games-logo-name-black.png" download class="download-btn">Black</a>
-                        <a href="../logos/PNG/sligh-games-logo-name-white.png" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PDF:</span>
-                        <a href="../logos/PDF/sligh-games-logo-name-color.pdf" download class="download-btn">Color</a>
-                        <a href="../logos/PDF/sligh-games-logo-name-black.pdf" download class="download-btn">Black</a>
-                        <a href="../logos/PDF/sligh-games-logo-name-white.pdf" download class="download-btn">White</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Full Logo with Name (Vertical) -->
-            <div class="logo-item">
-                <img src="../logos/PNG/sligh-games-logo-name-v-color.png" alt="Sligh Games Full Logo with Name (Vertical)" onerror="this.src='../logos/PNG/sligh-games-logo-name-v-black.png'">
-                <h3>Full Logo with Name (Vertical)</h3>
-                <p>Vertical stacked arrangement with the logo mark above the name. Ideal for square or vertical spaces.</p>
-                <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #999;">White</span></p>
-                <div class="download-links">
-                    <div class="format-group">
-                        <span class="format-label">SVG:</span>
-                        <a href="../logos/SVG/sligh-games-logo-name-v-black.svg" download class="download-btn">Black</a>
-                        <a href="../logos/SVG/sligh-games-logo-name-v-white.svg" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PNG:</span>
-                        <a href="../logos/PNG/sligh-games-logo-name-v-black.png" download class="download-btn">Black</a>
-                        <a href="../logos/PNG/sligh-games-logo-name-v-white.png" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PDF:</span>
-                        <a href="../logos/PDF/sligh-games-logo-name-v-black.pdf" download class="download-btn">Black</a>
-                        <a href="../logos/PDF/sligh-games-logo-name-v-white.pdf" download class="download-btn">White</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Full Logo with Name (Horizontal) -->
-            <div class="logo-item">
-                <img src="../logos/PNG/sligh-games-logo-name-h-color.png" alt="Sligh Games Full Logo with Name (Horizontal)" onerror="this.src='../logos/PNG/sligh-games-logo-name-h-black.png'">
-                <h3>Full Logo with Name (Horizontal)</h3>
-                <p>The primary logo variant with the logo mark and name side by side. Use this for most applications where horizontal space is available.</p>
-                <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #999;">White</span></p>
-                <div class="download-links">
-                    <div class="format-group">
-                        <span class="format-label">SVG:</span>
-                        <a href="../logos/SVG/sligh-games-logo-name-h-black.svg" download class="download-btn">Black</a>
-                        <a href="../logos/SVG/sligh-games-logo-name-h-white.svg" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PNG:</span>
-                        <a href="../logos/PNG/sligh-games-logo-name-h-black.png" download class="download-btn">Black</a>
-                        <a href="../logos/PNG/sligh-games-logo-name-h-white.png" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PDF:</span>
-                        <a href="../logos/PDF/sligh-games-logo-name-h-black.pdf" download class="download-btn">Black</a>
-                        <a href="../logos/PDF/sligh-games-logo-name-h-white.pdf" download class="download-btn">White</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Name Only -->
-            <div class="logo-item">
-                <img src="../logos/PNG/sligh-games-name-black.png" alt="Sligh Games Name Only">
-                <h3>Name Only</h3>
-                <p>Just the text without the logo mark. Use this when the logo mark is not appropriate or when space is limited.</p>
-                <p>Available in: <span style="color: black;">Black</span>, <span style="color: #999;">White</span></p>
-                <div class="download-links">
-                    <div class="format-group">
-                        <span class="format-label">SVG:</span>
-                        <a href="../logos/SVG/sligh-games-name-black.svg" download class="download-btn">Black</a>
-                        <a href="../logos/SVG/sligh-games-name-white.svg" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PNG:</span>
-                        <a href="../logos/PNG/sligh-games-name-black.png" download class="download-btn">Black</a>
-                        <a href="../logos/PNG/sligh-games-name-white.png" download class="download-btn">White</a>
-                    </div>
-                    <div class="format-group">
-                        <span class="format-label">PDF:</span>
-                        <a href="../logos/PDF/sligh-games-name-black.pdf" download class="download-btn">Black</a>
-                        <a href="../logos/PDF/sligh-games-name-white.pdf" download class="download-btn">White</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section>
-        <h2>Color Palette</h2>
-        <p>The official Sligh Games color palette consists of natural tones representing water, sun, leaves, trunk, and roots elements.</p>
+        </section>
         
-        <div class="color-palette">
-            <!-- Water -->
-            <div class="color-item">
-                <div class="color-box sligh-bg-water light-text">Water</div>
-                <div class="color-info">
-                    <h4>Deep Blue</h4>
-                    <p>HEX: #2f5c7e</p>
-                    <p>RGB: 47, 92, 126</p>
-                    <p>CSS: var(--sligh-water)</p>
+        <section id="logo-variants" aria-labelledby="logo-variants-heading">
+            <h2 id="logo-variants-heading">Logo Variants</h2>
+            <div class="sligh-grid">
+                <!-- Logo Only -->
+                <div class="sligh-card">
+                    <div class="sligh-logo-display" id="logo-only-display">
+                        <img src="./logos/PNG/sligh-games-logo-color.png" alt="Sligh Games Logo Only Color" class="logo-preview logo-color" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-black.png" alt="Sligh Games Logo Only Black" class="logo-preview logo-black" style="display: none;" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-white.png" alt="Sligh Games Logo Only White" class="logo-preview logo-white" style="display: none;" loading="lazy">
+                    </div>
+                    <div class="logo-preview-controls">
+                        <button class="logo-variant-btn active" data-variant="color">Color</button>
+                        <button class="logo-variant-btn" data-variant="black">Black</button>
+                        <button class="logo-variant-btn" data-variant="white">White</button>
+                    </div>
+                    <div class="sligh-card-body">
+                        <h3>Logo Only</h3>
+                        <p>Just the logo mark without text. Use this for icons, avatars, or when the brand is already well recognized.</p>
+                        <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #fff;">White</span> (on dark background)</p>
+                    </div>
+                    <div class="sligh-card-footer">
+                        <div class="format-group">
+                            <span class="sligh-format-label">SVG:</span>
+                            <a href="./logos/SVG/sligh-games-logo-color.svg" download="sligh-games-logo-color.svg" class="sligh-download-btn" aria-label="Download Color Logo in SVG format">Color</a>
+                            <a href="./logos/SVG/sligh-games-logo-black.svg" download="sligh-games-logo-black.svg" class="sligh-download-btn" aria-label="Download Black Logo in SVG format">Black</a>
+                            <a href="./logos/SVG/sligh-games-logo-white.svg" download="sligh-games-logo-white.svg" class="sligh-download-btn" aria-label="Download White Logo in SVG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PNG:</span>
+                            <a href="./logos/PNG/sligh-games-logo-color.png" download="sligh-games-logo-color.png" class="sligh-download-btn" aria-label="Download Color Logo in PNG format">Color</a>
+                            <a href="./logos/PNG/sligh-games-logo-black.png" download="sligh-games-logo-black.png" class="sligh-download-btn" aria-label="Download Black Logo in PNG format">Black</a>
+                            <a href="./logos/PNG/sligh-games-logo-white.png" download="sligh-games-logo-white.png" class="sligh-download-btn" aria-label="Download White Logo in PNG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PDF:</span>
+                            <a href="./logos/PDF/sligh-games-logo-color.pdf" download="sligh-games-logo-color.pdf" class="sligh-download-btn" aria-label="Download Color Logo in PDF format">Color</a>
+                            <a href="./logos/PDF/sligh-games-logo-black.pdf" download="sligh-games-logo-black.pdf" class="sligh-download-btn" aria-label="Download Black Logo in PDF format">Black</a>
+                            <a href="./logos/PDF/sligh-games-logo-white.pdf" download="sligh-games-logo-white.pdf" class="sligh-download-btn" aria-label="Download White Logo in PDF format">White</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full Logo with Name -->
+                <div class="sligh-card">
+                    <div class="sligh-logo-display" id="logo-name-display">
+                        <img src="./logos/PNG/sligh-games-logo-name-color.png" alt="Sligh Games Full Logo with Name Color" class="logo-preview logo-color" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-name-black.png" alt="Sligh Games Full Logo with Name Black" class="logo-preview logo-black" style="display: none;" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-name-white.png" alt="Sligh Games Full Logo with Name White" class="logo-preview logo-white" style="display: none;" loading="lazy">
+                    </div>
+                    <div class="logo-preview-controls">
+                        <button class="logo-variant-btn active" data-variant="color">Color</button>
+                        <button class="logo-variant-btn" data-variant="black">Black</button>
+                        <button class="logo-variant-btn" data-variant="white">White</button>
+                    </div>
+                    <div class="sligh-card-body">
+                        <h3>Full Logo with Name</h3>
+                        <p>Standard arrangement of the logo mark and name. Use this for general applications.</p>
+                        <p>Available in: <span class="sligh-text-leaves">Color</span>, <span style="color: black;">Black</span>, <span style="color: #fff;">White</span> (on dark background)</p>
+                    </div>
+                    <div class="sligh-card-footer">
+                        <div class="format-group">
+                            <span class="sligh-format-label">SVG:</span>
+                            <a href="./logos/SVG/sligh-games-logo-name-color.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Color Logo with Name in SVG format">Color</a>
+                            <a href="./logos/SVG/sligh-games-logo-name-black.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Logo with Name in SVG format">Black</a>
+                            <a href="./logos/SVG/sligh-games-logo-name-white.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Logo with Name in SVG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PNG:</span>
+                            <a href="./logos/PNG/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Color Logo with Name in PNG format">Color</a>
+                            <a href="./logos/PNG/sligh-games-logo-name-black.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Logo with Name in PNG format">Black</a>
+                            <a href="./logos/PNG/sligh-games-logo-name-white.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Logo with Name in PNG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PDF:</span>
+                            <a href="./logos/PDF/sligh-games-logo-name-color.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Color Logo with Name in PDF format">Color</a>
+                            <a href="./logos/PDF/sligh-games-logo-name-black.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Logo with Name in PDF format">Black</a>
+                            <a href="./logos/PDF/sligh-games-logo-name-white.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Logo with Name in PDF format">White</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full Logo with Name (Vertical) -->
+                <div class="sligh-card">
+                    <div class="sligh-logo-display" id="logo-name-v-display">
+                        <img src="./logos/PNG/sligh-games-logo-name-v-black.png" alt="Sligh Games Full Logo with Name (Vertical) Black" class="logo-preview logo-black" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-name-v-white.png" alt="Sligh Games Full Logo with Name (Vertical) White" class="logo-preview logo-white" style="display: none;" loading="lazy">
+                    </div>
+                    <div class="logo-preview-controls">
+                        <button class="logo-variant-btn active" data-variant="black">Black</button>
+                        <button class="logo-variant-btn" data-variant="white">White</button>
+                    </div>
+                    <div class="sligh-card-body">
+                        <h3>Full Logo with Name (Vertical)</h3>
+                        <p>Vertical stacked arrangement with the logo mark above the name. Ideal for square or vertical spaces.</p>
+                        <p>Available in: <span style="color: black;">Black</span>, <span style="color: #fff;">White</span> (on dark background)</p>
+                    </div>
+                    <div class="sligh-card-footer">
+                        <div class="format-group">
+                            <span class="sligh-format-label">SVG:</span>
+                            <a href="./logos/SVG/sligh-games-logo-name-v-black.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Vertical Logo with Name in SVG format">Black</a>
+                            <a href="./logos/SVG/sligh-games-logo-name-v-white.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Vertical Logo with Name in SVG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PNG:</span>
+                            <a href="./logos/PNG/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Vertical Logo with Name in PNG format">Black</a>
+                            <a href="./logos/PNG/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Vertical Logo with Name in PNG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PDF:</span>
+                            <a href="./logos/PDF/sligh-games-logo-name-v-black.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Vertical Logo with Name in PDF format">Black</a>
+                            <a href="./logos/PDF/sligh-games-logo-name-v-white.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Vertical Logo with Name in PDF format">White</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full Logo with Name (Horizontal) -->
+                <div class="sligh-card">
+                    <div class="sligh-logo-display" id="logo-name-h-display">
+                        <img src="./logos/PNG/sligh-games-logo-name-h-black.png" alt="Sligh Games Full Logo with Name (Horizontal) Black" class="logo-preview logo-black" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-logo-name-h-white.png" alt="Sligh Games Full Logo with Name (Horizontal) White" class="logo-preview logo-white" style="display: none;" loading="lazy">
+                    </div>
+                    <div class="logo-preview-controls">
+                        <button class="logo-variant-btn active" data-variant="black">Black</button>
+                        <button class="logo-variant-btn" data-variant="white">White</button>
+                    </div>
+                    <div class="sligh-card-body">
+                        <h3>Full Logo with Name (Horizontal)</h3>
+                        <p>The primary logo variant with the logo mark and name side by side. Use this for most applications where horizontal space is available.</p>
+                        <p>Available in: <span style="color: black;">Black</span>, <span style="color: #fff;">White</span> (on dark background)</p>
+                    </div>
+                    <div class="sligh-card-footer">
+                        <div class="format-group">
+                            <span class="sligh-format-label">SVG:</span>
+                            <a href="./logos/SVG/sligh-games-logo-name-h-black.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Horizontal Logo with Name in SVG format">Black</a>
+                            <a href="./logos/SVG/sligh-games-logo-name-h-white.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Horizontal Logo with Name in SVG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PNG:</span>
+                            <a href="./logos/PNG/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Horizontal Logo with Name in PNG format">Black</a>
+                            <a href="./logos/PNG/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Horizontal Logo with Name in PNG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PDF:</span>
+                            <a href="./logos/PDF/sligh-games-logo-name-h-black.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Horizontal Logo with Name in PDF format">Black</a>
+                            <a href="./logos/PDF/sligh-games-logo-name-h-white.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Horizontal Logo with Name in PDF format">White</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Name Only -->
+                <div class="sligh-card">
+                    <div class="sligh-logo-display" id="logo-name-only-display">
+                        <img src="./logos/PNG/sligh-games-name-black.png" alt="Sligh Games Name Only Black" class="logo-preview logo-black" loading="lazy">
+                        <img src="./logos/PNG/sligh-games-name-white.png" alt="Sligh Games Name Only White" class="logo-preview logo-white" style="display: none;" loading="lazy">
+                    </div>
+                    <div class="logo-preview-controls">
+                        <button class="logo-variant-btn active" data-variant="black">Black</button>
+                        <button class="logo-variant-btn" data-variant="white">White</button>
+                    </div>
+                    <div class="sligh-card-body">
+                        <h3>Name Only</h3>
+                        <p>Just the text without the logo mark. Use this when the logo mark is not appropriate or when space is limited.</p>
+                        <p>Available in: <span style="color: black;">Black</span>, <span style="color: #fff;">White</span> (on dark background)</p>
+                    </div>
+                    <div class="sligh-card-footer">
+                        <div class="format-group">
+                            <span class="sligh-format-label">SVG:</span>
+                            <a href="./logos/SVG/sligh-games-name-black.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Name Only in SVG format">Black</a>
+                            <a href="./logos/SVG/sligh-games-name-white.svg" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Name Only in SVG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PNG:</span>
+                            <a href="./logos/PNG/sligh-games-name-black.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Name Only in PNG format">Black</a>
+                            <a href="./logos/PNG/sligh-games-name-white.png" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Name Only in PNG format">White</a>
+                        </div>
+                        <div class="format-group sligh-mt-xs">
+                            <span class="sligh-format-label">PDF:</span>
+                            <a href="./logos/PDF/sligh-games-name-black.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download Black Name Only in PDF format">Black</a>
+                            <a href="./logos/PDF/sligh-games-name-white.pdf" download="sligh-games-logo-name-color.svg" class="sligh-download-btn" aria-label="Download White Name Only in PDF format">White</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="color-palette" aria-labelledby="color-palette-heading">
+            <h2 id="color-palette-heading">Color Palette</h2>
+            <p>The official Sligh Games color palette consists of natural tones representing water, sun, leaves, trunk, and roots elements.</p>
+            
+            <div class="sligh-grid">
+                <!-- Water -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-water light-text">Water</div>
+                    <div class="sligh-color-info">
+                        <h4>Deep Blue</h4>
+                        <p>HEX: #2f5c7e</p>
+                        <p>RGB: 47, 92, 126</p>
+                        <p>CSS: var(--sligh-water)</p>
+                    </div>
+                </div>
+                
+                <!-- Sun -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-sun dark-text">Sun</div>
+                    <div class="sligh-color-info">
+                        <h4>Yellow</h4>
+                        <p>HEX: #ffe66d</p>
+                        <p>RGB: 255, 230, 109</p>
+                        <p>CSS: var(--sligh-sun)</p>
+                    </div>
+                </div>
+                
+                <!-- Leaves (Normal) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-leaves light-text">Leaves (Normal)</div>
+                    <div class="sligh-color-info">
+                        <h4>Green</h4>
+                        <p>HEX: #436e4f</p>
+                        <p>RGB: 67, 110, 79</p>
+                        <p>CSS: var(--sligh-leaves-normal)</p>
+                    </div>
+                </div>
+                
+                <!-- Leaves (Light) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-leaves-light light-text">Leaves (Light)</div>
+                    <div class="sligh-color-info">
+                        <h4>Light Green</h4>
+                        <p>HEX: #689f7c</p>
+                        <p>RGB: 104, 159, 124</p>
+                        <p>CSS: var(--sligh-leaves-light)</p>
+                    </div>
+                </div>
+                
+                <!-- Leaves (Dark) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-leaves-dark light-text">Leaves (Dark)</div>
+                    <div class="sligh-color-info">
+                        <h4>Dark Green</h4>
+                        <p>HEX: #2a443a</p>
+                        <p>RGB: 42, 68, 58</p>
+                        <p>CSS: var(--sligh-leaves-dark)</p>
+                    </div>
+                </div>
+                
+                <!-- Trunk -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-trunk light-text">Trunk</div>
+                    <div class="sligh-color-info">
+                        <h4>Brown</h4>
+                        <p>HEX: #8b6f5a</p>
+                        <p>RGB: 139, 111, 90</p>
+                        <p>CSS: var(--sligh-trunk)</p>
+                    </div>
+                </div>
+                
+                <!-- Roots (Normal) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-roots light-text">Roots (Normal)</div>
+                    <div class="sligh-color-info">
+                        <h4>Light Brown</h4>
+                        <p>HEX: #a39b94</p>
+                        <p>RGB: 163, 155, 148</p>
+                        <p>CSS: var(--sligh-roots-normal)</p>
+                    </div>
+                </div>
+                
+                <!-- Roots (Light) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-roots-light dark-text">Roots (Light)</div>
+                    <div class="sligh-color-info">
+                        <h4>Very Light Brown</h4>
+                        <p>HEX: #d5cec8</p>
+                        <p>RGB: 213, 206, 200</p>
+                        <p>CSS: var(--sligh-roots-light)</p>
+                    </div>
+                </div>
+                
+                <!-- Roots (Dark) -->
+                <div class="sligh-card">
+                    <div class="sligh-color-box sligh-bg-roots-dark light-text">Roots (Dark)</div>
+                    <div class="sligh-color-info">
+                        <h4>Dark Brown</h4>
+                        <p>HEX: #7d756f</p>
+                        <p>RGB: 125, 117, 111</p>
+                        <p>CSS: var(--sligh-roots-dark)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stylesheets" aria-labelledby="stylesheets-heading">
+            <h2 id="stylesheets-heading">Brand Stylesheets</h2>
+            <p>Use these stylesheets to maintain consistent branding across your projects. The stylesheets provide CSS variables, utility classes, and component styles.</p>
+            
+            <div class="sligh-grid">
+                <!-- CSS Stylesheet -->
+                <div class="sligh-card">
+                    <div class="sligh-card-header">
+                        <h3>CSS Stylesheet</h3>
+                    </div>
+                    <div class="sligh-card-body">
+                        <p>Ready-to-use CSS with variables and utility classes for implementing the Sligh Games brand.</p>
+                        <div class="code-preview">
+                            <pre><code>/**
+ * Sligh Games - Brand Color Stylesheet
+ * Copyright © 2025 Sligh Games. All Rights Reserved.
+ */
+
+:root {
+  /* Logo Colors */
+  --sligh-water: #2f5c7e;
+  --sligh-sun: #ffe66d;
+  --sligh-leaves-normal: #436e4f;
+  --sligh-leaves-light: #689f7c;
+  --sligh-leaves-dark: #2a443a;
+  /* ... more variables ... */
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="sligh-card-footer" style="text-align: center;">
+                        <div class="download-buttons-stack">
+                            <a href="./styles/CSS/sligh-games.css" download class="sligh-button" aria-label="Download CSS Stylesheet">Download CSS</a>
+                            <a href="./styles/CSS/sligh-games.min.css" download class="sligh-button sligh-button-secondary" aria-label="Download Minified CSS Stylesheet">Download Minified CSS</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SCSS Stylesheet -->
+                <div class="sligh-card">
+                    <div class="sligh-card-header">
+                        <h3>SCSS Stylesheet</h3>
+                    </div>
+                    <div class="sligh-card-body">
+                        <p>SCSS source files for developers who prefer to work with Sass in their projects.</p>
+                        <div class="code-preview">
+                            <pre><code>/**
+ * Sligh Games - Brand Color Stylesheet (SCSS)
+ * Copyright © 2025 Sligh Games. All Rights Reserved.
+ */
+
+// Brand Colors
+$sligh-water: #2f5c7e;
+$sligh-sun: #ffe66d;
+$sligh-leaves-normal: #436e4f;
+$sligh-leaves-light: #689f7c;
+$sligh-leaves-dark: #2a443a;
+/* ... more variables ... */</code></pre>
+                        </div>
+                    </div>
+                    <div class="sligh-card-footer" style="text-align: center;">
+                        <div class="download-buttons-stack">
+                            <a href="./styles/SCSS/sligh-games.scss" download class="sligh-button" aria-label="Download SCSS Stylesheet">Download SCSS</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Sun -->
-            <div class="color-item">
-                <div class="color-box sligh-bg-sun dark-text">Sun</div>
-                <div class="color-info">
-                    <h4>Yellow</h4>
-                    <p>HEX: #ffe66d</p>
-                    <p>RGB: 255, 230, 109</p>
-                    <p>CSS: var(--sligh-sun)</p>
+            <div class="sligh-card sligh-mt-md">
+                <div class="sligh-card-header">
+                    <h3>Using the Stylesheets</h3>
+                </div>
+                <div class="sligh-card-body">
+                    <h4>CSS Variables</h4>
+                    <p>The stylesheet provides CSS variables that can be used to maintain consistent branding:</p>
+                    <div class="code-preview">
+                        <pre><code>/* Colors */
+var(--sligh-water)         /* Deep Blue: #2f5c7e */
+var(--sligh-sun)           /* Yellow: #ffe66d */
+var(--sligh-leaves-normal) /* Green: #436e4f */
+var(--sligh-leaves-light)  /* Light Green: #689f7c */
+var(--sligh-leaves-dark)   /* Dark Green: #2a443a */</code></pre>
+                    </div>
+                    
+                    <h4>Utility Classes</h4>
+                    <p>The stylesheet provides utility classes for common styling needs:</p>
+                    <div class="code-preview">
+                        <pre><code>&lt;!-- Background Colors --&gt;
+&lt;div class="sligh-bg-water"&gt;Deep Blue Background&lt;/div&gt;
+&lt;div class="sligh-bg-sun"&gt;Yellow Background&lt;/div&gt;
+
+&lt;!-- Text Colors --&gt;
+&lt;p class="sligh-text-water"&gt;Deep Blue Text&lt;/p&gt;
+&lt;p class="sligh-text-sun"&gt;Yellow Text&lt;/p&gt;
+
+&lt;!-- Components --&gt;
+&lt;button class="sligh-button"&gt;Primary Button&lt;/button&gt;
+&lt;button class="sligh-button sligh-button-secondary"&gt;Secondary Button&lt;/button&gt;</code></pre>
+                    </div>
+                    
+                    <h4>Compiling SCSS</h4>
+                    <p>To compile the SCSS file to CSS, you can use a SASS compiler:</p>
+                    <div class="code-preview">
+                        <pre><code># Using npm
+npm install -g sass
+sass public/styles/scss/sligh-games.scss public/styles/css/sligh-games.css
+
+# Using Dart Sass
+sass public/styles/scss/sligh-games.scss public/styles/css/sligh-games.css</code></pre>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Leaves (Normal) -->
-            <div class="color-item">
-                <div class="color-box sligh-bg-leaves light-text">Leaves (Normal)</div>
-                <div class="color-info">
-                    <h4>Green</h4>
-                    <p>HEX: #436e4f</p>
-                    <p>RGB: 67, 110, 79</p>
-                    <p>CSS: var(--sligh-leaves-normal)</p>
-                </div>
-            </div>
-            
-            <!-- Leaves (Light) -->
-            <div class="color-item">
-                <div class="color-box sligh-bg-leaves-light light-text">Leaves (Light)</div>
-                <div class="color-info">
-                    <h4>Light Green</h4>
-                    <p>HEX: #689f7c</p>
-                    <p>RGB: 104, 159, 124</p>
-                    <p>CSS: var(--sligh-leaves-light)</p>
-                </div>
-            </div>
-            
-            <!-- Leaves (Dark) -->
-            <div class="color-item">
-                <div class="color-box sligh-bg-leaves-dark light-text">Leaves (Dark)</div>
-                <div class="color-info">
-                    <h4>Dark Green</h4>
-                    <p>HEX: #2a443a</p>
-                    <p>RGB: 42, 68, 58</p>
-                    <p>CSS: var(--sligh-leaves-dark)</p>
-                </div>
-            </div>
-            
-            <!-- Trunk -->
-            <div class="color-item">
-                <div class="color-box" style="background-color: #8b6f5a; color: white;">Trunk</div>
-                <div class="color-info">
-                    <h4>Brown</h4>
-                    <p>HEX: #8b6f5a</p>
-                    <p>RGB: 139, 111, 90</p>
-                    <p>CSS: var(--sligh-trunk)</p>
-                </div>
-            </div>
-            
-            <!-- Roots (Normal) -->
-            <div class="color-item">
-                <div class="color-box" style="background-color: #a39b94; color: white;">Roots (Normal)</div>
-                <div class="color-info">
-                    <h4>Light Brown</h4>
-                    <p>HEX: #a39b94</p>
-                    <p>RGB: 163, 155, 148</p>
-                    <p>CSS: var(--sligh-roots-normal)</p>
-                </div>
-            </div>
-            
-            <!-- Roots (Light) -->
-            <div class="color-item">
-                <div class="color-box" style="background-color: #d5cec8; color: #333;">Roots (Light)</div>
-                <div class="color-info">
-                    <h4>Very Light Brown</h4>
-                    <p>HEX: #d5cec8</p>
-                    <p>RGB: 213, 206, 200</p>
-                    <p>CSS: var(--sligh-roots-light)</p>
-                </div>
-            </div>
-            
-            <!-- Roots (Dark) -->
-            <div class="color-item">
-                <div class="color-box" style="background-color: #7d756f; color: white;">Roots (Dark)</div>
-                <div class="color-info">
-                    <h4>Dark Brown</h4>
-                    <p>HEX: #7d756f</p>
-                    <p>RGB: 125, 117, 111</p>
-                    <p>CSS: var(--sligh-roots-dark)</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
     
-    <section>
-        <h2>Usage Guidelines</h2>
-        <ul>
-            <li>Use the SVG files for print and high-quality digital materials</li>
-            <li>Use the PNG files for web and digital applications</li>
-            <li>Use the PDF files for professional printing and publications</li>
-            <li>Always maintain the proportions of the logos when resizing</li>
-            <li>Ensure adequate spacing around the logo (at least the height of the "S" in the logo)</li>
-            <li>Do not alter the colors or modify the logo design</li>
-            <li>Use the exact color codes provided in the color palette for all official materials</li>
-            <li>For print materials, use the CMYK equivalents of these colors</li>
-            <li>For web and digital applications, use the RGB/HEX values</li>
-        </ul>
-    </section>
-    
-    <footer>
+    <footer class="sligh-footer">
         <p>Copyright © 2025 Sligh Games. All Rights Reserved.</p>
-        <p>For licensing inquiries: frederic.nowak@sligh.games</p>
+        <p>For licensing inquiries: <a href="mailto:legal@sligh.games">legal@sligh.games</a></p>
+        <p><a href="https://sligh.games" aria-label="Visit Sligh Games website">Visit Sligh Games</a></p>
     </footer>
 </body>
 </html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to all logo variant buttons
+            const variantButtons = document.querySelectorAll('.logo-variant-btn');
+            
+            variantButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get the variant and container
+                    const variant = this.getAttribute('data-variant');
+                    const container = this.closest('.sligh-card');
+                    const logoDisplay = container.querySelector('.sligh-logo-display');
+                    
+                    // Update active button state
+                    container.querySelectorAll('.logo-variant-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Hide all logos in this container
+                    container.querySelectorAll('.logo-preview').forEach(logo => {
+                        logo.style.display = 'none';
+                    });
+                    
+                    // Show the selected logo
+                    const selectedLogo = container.querySelector('.logo-' + variant);
+                    if (selectedLogo) {
+                        selectedLogo.style.display = 'block';
+                    }
+                    
+                    // Toggle dark background for white logos
+                    if (variant === 'white') {
+                        logoDisplay.classList.add('dark-bg');
+                    } else {
+                        logoDisplay.classList.remove('dark-bg');
+                    }
+                });
+            });
+            
+            // Enhance download buttons
+            const downloadButtons = document.querySelectorAll('a[download]');
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Get the file name from the href
+                    const filePath = this.getAttribute('href');
+                    const fileName = filePath.split('/').pop();
+                    
+                    // Log download for analytics (if needed)
+                    console.log('Downloading: ' + fileName);
+                    
+                    // The download attribute already handles the file download
+                    // This is just for additional functionality if needed
+                });
+            });
+        });
+    </script>
