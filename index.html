@@ -198,17 +198,28 @@
             color: var(--sligh-leaves-dark);
         }
         
-        /* Download buttons */
+        /* Format group styles */
         .format-group {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
         
         .sligh-format-label {
             font-weight: bold;
             min-width: 40px;
+            margin-right: 0.15rem;
+        }
+        
+        .format-group a.sligh-download-btn {
+            flex: 0 0 80px;
+            margin-right: 0.25rem;
+        }
+        
+        .format-group .dropdown-container {
+            flex: 0 0 80px;
+            margin-right: 0.25rem;
         }
         
         /* Download buttons stack */
@@ -239,6 +250,12 @@
             transition: background-color 0.2s, transform 0.1s;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            min-width: 80px;
+            text-align: center;
+            vertical-align: middle;
+            box-sizing: border-box;
+            height: 32px;
+            line-height: 20px;
         }
         
         .sligh-download-btn:hover {
@@ -253,6 +270,67 @@
         }
         
         .sligh-download-btn::before {
+            content: "↓ ";
+            font-weight: bold;
+        }
+        
+        /* Dropdown styles for PNG and JPG buttons */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+            min-width: 80px;
+            vertical-align: middle;
+        }
+        
+        .dropdown-btn {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .dropdown-btn::after {
+            content: "";
+            font-size: 0.7rem;
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+            left: 0;
+            bottom: 100%;
+            margin-bottom: 0.25rem;
+        }
+        
+        .dropdown-content.show {
+            display: block;
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s;
+            text-align: left;
+            white-space: nowrap;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .dropdown-item::before {
             content: "↓ ";
             font-weight: bold;
         }
@@ -416,15 +494,75 @@
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">PNG:</span>
-                            <a href="./logos/PNG/300/sligh-games-logo-color.png" download="sligh-games-logo-color.png" class="sligh-download-btn" aria-label="Download Color Logo in PNG format (300 DPI)">Color</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-black.png" download="sligh-games-logo-black.png" class="sligh-download-btn" aria-label="Download Black Logo in PNG format (300 DPI)">Black</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-white.png" download="sligh-games-logo-white.png" class="sligh-download-btn" aria-label="Download White Logo in PNG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Color Logo in PNG format">Color</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-color.png" download="sligh-games-logo-color.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-color.png" download="sligh-games-logo-color-150dpi.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-color.png" download="sligh-games-logo-color-100dpi.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-color.png" download="sligh-games-logo-color-75dpi.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-color.png" download="sligh-games-logo-color-50dpi.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-color.png" download="sligh-games-logo-color-25dpi.png" class="dropdown-item" aria-label="Download Color Logo in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Logo in PNG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-black.png" download="sligh-games-logo-black.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-black.png" download="sligh-games-logo-black-150dpi.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-black.png" download="sligh-games-logo-black-100dpi.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-black.png" download="sligh-games-logo-black-75dpi.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-black.png" download="sligh-games-logo-black-50dpi.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-black.png" download="sligh-games-logo-black-25dpi.png" class="dropdown-item" aria-label="Download Black Logo in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Logo in PNG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-white.png" download="sligh-games-logo-white.png" class="dropdown-item" aria-label="Download White Logo in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-white.png" download="sligh-games-logo-white-150dpi.png" class="dropdown-item" aria-label="Download White Logo in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-white.png" download="sligh-games-logo-white-100dpi.png" class="dropdown-item" aria-label="Download White Logo in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-white.png" download="sligh-games-logo-white-75dpi.png" class="dropdown-item" aria-label="Download White Logo in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-white.png" download="sligh-games-logo-white-50dpi.png" class="dropdown-item" aria-label="Download White Logo in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-white.png" download="sligh-games-logo-white-25dpi.png" class="dropdown-item" aria-label="Download White Logo in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">JPG:</span>
-                            <a href="./logos/JPG/300/sligh-games-logo-color.jpg" download="sligh-games-logo-color.jpg" class="sligh-download-btn" aria-label="Download Color Logo in JPG format (300 DPI)">Color</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-black.jpg" download="sligh-games-logo-black.jpg" class="sligh-download-btn" aria-label="Download Black Logo in JPG format (300 DPI)">Black</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-white.jpg" download="sligh-games-logo-white.jpg" class="sligh-download-btn" aria-label="Download White Logo in JPG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Color Logo in JPG format">Color</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-color.jpg" download="sligh-games-logo-color.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-color.jpg" download="sligh-games-logo-color-150dpi.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-color.jpg" download="sligh-games-logo-color-100dpi.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-color.jpg" download="sligh-games-logo-color-75dpi.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-color.jpg" download="sligh-games-logo-color-50dpi.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-color.jpg" download="sligh-games-logo-color-25dpi.jpg" class="dropdown-item" aria-label="Download Color Logo in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Logo in JPG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-black.jpg" download="sligh-games-logo-black.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-black.jpg" download="sligh-games-logo-black-150dpi.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-black.jpg" download="sligh-games-logo-black-100dpi.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-black.jpg" download="sligh-games-logo-black-75dpi.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-black.jpg" download="sligh-games-logo-black-50dpi.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-black.jpg" download="sligh-games-logo-black-25dpi.jpg" class="dropdown-item" aria-label="Download Black Logo in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Logo in JPG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-white.jpg" download="sligh-games-logo-white.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-white.jpg" download="sligh-games-logo-white-150dpi.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-white.jpg" download="sligh-games-logo-white-100dpi.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-white.jpg" download="sligh-games-logo-white-75dpi.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-white.jpg" download="sligh-games-logo-white-50dpi.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-white.jpg" download="sligh-games-logo-white-25dpi.jpg" class="dropdown-item" aria-label="Download White Logo in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -461,15 +599,75 @@
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">PNG:</span>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color.png" class="sligh-download-btn" aria-label="Download Color Logo with Name in PNG format (300 DPI)">Color</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black.png" class="sligh-download-btn" aria-label="Download Black Logo with Name in PNG format (300 DPI)">Black</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white.png" class="sligh-download-btn" aria-label="Download White Logo with Name in PNG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Color Logo with Name in PNG format">Color</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color-150dpi.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color-100dpi.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color-75dpi.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color-50dpi.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-color.png" download="sligh-games-logo-name-color-25dpi.png" class="dropdown-item" aria-label="Download Color Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Logo with Name in PNG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black-150dpi.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black-100dpi.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black-75dpi.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black-50dpi.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-black.png" download="sligh-games-logo-name-black-25dpi.png" class="dropdown-item" aria-label="Download Black Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Logo with Name in PNG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white-150dpi.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white-100dpi.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white-75dpi.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white-50dpi.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-white.png" download="sligh-games-logo-name-white-25dpi.png" class="dropdown-item" aria-label="Download White Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">JPG:</span>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color.jpg" class="sligh-download-btn" aria-label="Download Color Logo with Name in JPG format (300 DPI)">Color</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black.jpg" class="sligh-download-btn" aria-label="Download Black Logo with Name in JPG format (300 DPI)">Black</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white.jpg" class="sligh-download-btn" aria-label="Download White Logo with Name in JPG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Color Logo with Name in JPG format">Color</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color-150dpi.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color-100dpi.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color-75dpi.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color-50dpi.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-color.jpg" download="sligh-games-logo-name-color-25dpi.jpg" class="dropdown-item" aria-label="Download Color Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Logo with Name in JPG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black-150dpi.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black-100dpi.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black-75dpi.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black-50dpi.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-black.jpg" download="sligh-games-logo-name-black-25dpi.jpg" class="dropdown-item" aria-label="Download Black Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Logo with Name in JPG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white-150dpi.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white-100dpi.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white-75dpi.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white-50dpi.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-white.jpg" download="sligh-games-logo-name-white-25dpi.jpg" class="dropdown-item" aria-label="Download White Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -502,13 +700,53 @@
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">PNG:</span>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black.png" class="sligh-download-btn" aria-label="Download Black Vertical Logo with Name in PNG format (300 DPI)">Black</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white.png" class="sligh-download-btn" aria-label="Download White Vertical Logo with Name in PNG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Vertical Logo with Name in PNG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black-150dpi.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black-100dpi.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black-75dpi.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black-50dpi.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-v-black.png" download="sligh-games-logo-name-v-black-25dpi.png" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Vertical Logo with Name in PNG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white-150dpi.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white-100dpi.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white-75dpi.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white-50dpi.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-v-white.png" download="sligh-games-logo-name-v-white-25dpi.png" class="dropdown-item" aria-label="Download White Vertical Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">JPG:</span>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black.jpg" class="sligh-download-btn" aria-label="Download Black Vertical Logo with Name in JPG format (300 DPI)">Black</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white.jpg" class="sligh-download-btn" aria-label="Download White Vertical Logo with Name in JPG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Vertical Logo with Name in JPG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black-150dpi.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black-100dpi.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black-75dpi.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black-50dpi.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-v-black.jpg" download="sligh-games-logo-name-v-black-25dpi.jpg" class="dropdown-item" aria-label="Download Black Vertical Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Vertical Logo with Name in JPG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white-150dpi.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white-100dpi.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white-75dpi.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white-50dpi.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-v-white.jpg" download="sligh-games-logo-name-v-white-25dpi.jpg" class="dropdown-item" aria-label="Download White Vertical Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -541,13 +779,53 @@
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">PNG:</span>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black.png" class="sligh-download-btn" aria-label="Download Black Horizontal Logo with Name in PNG format (300 DPI)">Black</a>
-                            <a href="./logos/PNG/300/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white.png" class="sligh-download-btn" aria-label="Download White Horizontal Logo with Name in PNG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Horizontal Logo with Name in PNG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black-150dpi.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black-100dpi.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black-75dpi.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black-50dpi.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-h-black.png" download="sligh-games-logo-name-h-black-25dpi.png" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Horizontal Logo with Name in PNG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white-150dpi.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white-100dpi.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white-75dpi.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white-50dpi.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-logo-name-h-white.png" download="sligh-games-logo-name-h-white-25dpi.png" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">JPG:</span>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black.jpg" class="sligh-download-btn" aria-label="Download Black Horizontal Logo with Name in JPG format (300 DPI)">Black</a>
-                            <a href="./logos/JPG/300/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white.jpg" class="sligh-download-btn" aria-label="Download White Horizontal Logo with Name in JPG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Horizontal Logo with Name in JPG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black-150dpi.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black-100dpi.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black-75dpi.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black-50dpi.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-h-black.jpg" download="sligh-games-logo-name-h-black-25dpi.jpg" class="dropdown-item" aria-label="Download Black Horizontal Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Horizontal Logo with Name in JPG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white-150dpi.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white-100dpi.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white-75dpi.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white-50dpi.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-logo-name-h-white.jpg" download="sligh-games-logo-name-h-white-25dpi.jpg" class="dropdown-item" aria-label="Download White Horizontal Logo with Name in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -580,13 +858,53 @@
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">PNG:</span>
-                            <a href="./logos/PNG/300/sligh-games-name-black.png" download="sligh-games-name-black.png" class="sligh-download-btn" aria-label="Download Black Name Only in PNG format (300 DPI)">Black</a>
-                            <a href="./logos/PNG/300/sligh-games-name-white.png" download="sligh-games-name-white.png" class="sligh-download-btn" aria-label="Download White Name Only in PNG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Name Only in PNG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-name-black.png" download="sligh-games-name-black.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-name-black.png" download="sligh-games-name-black-150dpi.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-name-black.png" download="sligh-games-name-black-100dpi.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-name-black.png" download="sligh-games-name-black-75dpi.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-name-black.png" download="sligh-games-name-black-50dpi.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-name-black.png" download="sligh-games-name-black-25dpi.png" class="dropdown-item" aria-label="Download Black Name Only in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Name Only in PNG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/PNG/300/sligh-games-name-white.png" download="sligh-games-name-white.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/PNG/150/sligh-games-name-white.png" download="sligh-games-name-white-150dpi.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/PNG/100/sligh-games-name-white.png" download="sligh-games-name-white-100dpi.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/PNG/75/sligh-games-name-white.png" download="sligh-games-name-white-75dpi.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/PNG/50/sligh-games-name-white.png" download="sligh-games-name-white-50dpi.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/PNG/25/sligh-games-name-white.png" download="sligh-games-name-white-25dpi.png" class="dropdown-item" aria-label="Download White Name Only in PNG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="format-group sligh-mt-xs">
                             <span class="sligh-format-label">JPG:</span>
-                            <a href="./logos/JPG/300/sligh-games-name-black.jpg" download="sligh-games-name-black.jpg" class="sligh-download-btn" aria-label="Download Black Name Only in JPG format (300 DPI)">Black</a>
-                            <a href="./logos/JPG/300/sligh-games-name-white.jpg" download="sligh-games-name-white.jpg" class="sligh-download-btn" aria-label="Download White Name Only in JPG format (300 DPI)">White</a>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download Black Name Only in JPG format">Black</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-name-black.jpg" download="sligh-games-name-black.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-name-black.jpg" download="sligh-games-name-black-150dpi.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-name-black.jpg" download="sligh-games-name-black-100dpi.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-name-black.jpg" download="sligh-games-name-black-75dpi.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-name-black.jpg" download="sligh-games-name-black-50dpi.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-name-black.jpg" download="sligh-games-name-black-25dpi.jpg" class="dropdown-item" aria-label="Download Black Name Only in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-container">
+                                <span class="sligh-download-btn dropdown-btn" aria-label="Download White Name Only in JPG format">White</span>
+                                <div class="dropdown-content">
+                                    <a href="./logos/JPG/300/sligh-games-name-white.jpg" download="sligh-games-name-white.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (300 DPI)">300 DPI</a>
+                                    <a href="./logos/JPG/150/sligh-games-name-white.jpg" download="sligh-games-name-white-150dpi.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (150 DPI)">150 DPI</a>
+                                    <a href="./logos/JPG/100/sligh-games-name-white.jpg" download="sligh-games-name-white-100dpi.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (100 DPI)">100 DPI</a>
+                                    <a href="./logos/JPG/75/sligh-games-name-white.jpg" download="sligh-games-name-white-75dpi.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (75 DPI)">75 DPI</a>
+                                    <a href="./logos/JPG/50/sligh-games-name-white.jpg" download="sligh-games-name-white-50dpi.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (50 DPI)">50 DPI</a>
+                                    <a href="./logos/JPG/25/sligh-games-name-white.jpg" download="sligh-games-name-white-25dpi.jpg" class="dropdown-item" aria-label="Download White Name Only in JPG format (25 DPI)">25 DPI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -872,6 +1190,33 @@ sass public/styles/scss/sligh-games.scss public/styles/css/sligh-games.css</code
                     // The download attribute already handles the file download
                     // This is just for additional functionality if needed
                 });
+            });
+            
+            // Handle dropdown button clicks
+            const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Toggle dropdown visibility on click
+                    const dropdown = this.nextElementSibling;
+                    dropdown.classList.toggle('show');
+                    
+                    // Close all other dropdowns
+                    document.querySelectorAll('.dropdown-content.show').forEach(openDropdown => {
+                        if (openDropdown !== dropdown) {
+                            openDropdown.classList.remove('show');
+                        }
+                    });
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropdown-btn')) {
+                    document.querySelectorAll('.dropdown-content.show').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
+                }
             });
         });
     </script>
