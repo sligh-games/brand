@@ -7,8 +7,9 @@ This repository contains the official logo assets for Sligh Games in various for
 - **public/** - Main directory containing all public-facing assets
   - **public/logos/** - Logo assets in various formats
     - **public/logos/SVG/** - Vector source files in SVG format
-    - **public/logos/PNG/** - Raster exports in PNG format (300 DPI)
     - **public/logos/PDF/** - Vector exports in PDF format
+    - **public/logos/PNG/** - Raster exports in PNG format (multiple DPIs: 300, 150, 100, 75, 50, 25)
+    - **public/logos/JPG/** - Raster exports in JPG format (multiple DPIs: 300, 150, 100, 75, 50, 25, 90% quality)
   - **public/styles/** - Stylesheets for brand consistency
     - **public/styles/css/** - Compiled CSS files
     - **public/styles/scss/** - SCSS source files
@@ -209,52 +210,42 @@ This repository includes several scripts to manage and generate logo assets:
 The primary script for generating all logo variants and converting them to different formats.
 
 ```bash
-# Generate all standard variants and convert to PNG/PDF
+# Generate all standard variants and convert to PDF, PNG, and JPG
 ./scripts/generate_logos.sh
 
 # Generate only standard variants (black, white, etc.)
 ./scripts/generate_logos.sh --standard
 
-# Generate all variants but skip conversion to PNG/PDF
+# Generate all variants but skip conversion to PDF, PNG, and JPG
 ./scripts/generate_logos.sh --no-convert
+
+# Generate all variants without adding black backgrounds to white JPG logos
+./scripts/generate_logos.sh --no-bg
 
 # Show help information
 ./scripts/generate_logos.sh --help
 ```
 
-#### analyze_logo.sh
-
-A utility script to analyze SVG logo files and show color information.
-
-```bash
-# Analyze the standard color logo
-./scripts/analyze_logo.sh ../public/logos/SVG/sligh-games-logo-color.svg
-
-# Analyze a logo and save output to a specific file
-./scripts/analyze_logo.sh --output analyzed.svg ../public/logos/SVG/sligh-games-logo-color.svg
-```
-
 ### Utility Scripts
 
-#### svg_to_png.sh
+#### export_svg.sh
 
-Converts SVG files to PNG format with specified DPI.
-
-```bash
-# Convert all SVGs in a directory with default 300 DPI
-./scripts/svg_to_png.sh 300 ../public/logos/SVG ../public/logos/PNG
-
-# Convert with custom DPI
-./scripts/svg_to_png.sh 600 ../public/logos/SVG ../public/logos/PNG
-```
-
-#### svg_to_pdf.sh
-
-Converts SVG files to PDF format.
+Generalized script to export SVG files to various formats using Inkscape.
 
 ```bash
-# Convert all SVGs in a directory
-./scripts/svg_to_pdf.sh ../public/logos/SVG ../public/logos/PDF
+# Usage: ./export_svg.sh [type] [input_dir] [output_dir] [dpi] [quality] [bg_color]
+
+# Export to PNG with 300 DPI (with transparency)
+./scripts/export_svg.sh png ../public/logos/SVG ../public/logos/PNG 300 90 none
+
+# Export to PDF
+./scripts/export_svg.sh pdf ../public/logos/SVG ../public/logos/PDF 300 90 none
+
+# Export to JPG with 300 DPI, 90% quality, and black background for white logos
+./scripts/export_svg.sh jpg ../public/logos/SVG ../public/logos/JPG 300 90 black
+
+# Export to EPS
+./scripts/export_svg.sh eps ../public/logos/SVG ../public/logos/EPS 300 90 none
 ```
 
 #### recolor_svg.py
@@ -285,6 +276,18 @@ Adds copyright information to SVG files.
 ```bash
 # Add copyright to an SVG file
 ./scripts/add_copyright_to_svg.py input.svg output.svg "Copyright © 2025 Sligh Games"
+```
+
+#### clean_ds_store.sh
+
+Removes all .DS_Store files from the project and adds them to .gitignore.
+
+```bash
+# Clean .DS_Store files from the project
+./scripts/clean_ds_store.sh ..
+
+# Clean .DS_Store files from a specific directory
+./scripts/clean_ds_store.sh /path/to/directory
 ```
 
 ## Requirements
