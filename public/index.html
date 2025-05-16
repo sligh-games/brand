@@ -204,6 +204,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 0.4rem;
+            margin-bottom: 0.75rem;
         }
         
         .sligh-format-label {
@@ -304,7 +305,7 @@
             background-color: white;
             min-width: 160px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            z-index: 10;
             border-radius: 4px;
             padding: 0.5rem 0;
             left: 0;
@@ -379,6 +380,45 @@
             .format-group {
                 flex-direction: column;
                 align-items: flex-start;
+                width: 100%;
+            }
+            
+            .format-group .sligh-format-label {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+            
+            .format-group a.sligh-download-btn,
+            .format-group .dropdown-container {
+                flex: 0 0 100%;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .dropdown-content {
+                width: 100%;
+                min-width: unset;
+                position: relative;
+                bottom: auto;
+                margin-bottom: 0.5rem;
+                left: 0;
+            }
+            
+            .sligh-download-btn,
+            .dropdown-btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-preview-controls {
+                flex-wrap: wrap;
+            }
+            
+            .logo-variant-btn {
+                flex: 1 1 auto;
             }
         }
     </style>
